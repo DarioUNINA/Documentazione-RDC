@@ -1,4 +1,4 @@
-from os import *
+# from os import *
 
-data = os.hostname()
-print(data)
+# data = os.hostname()
+# print(data)
