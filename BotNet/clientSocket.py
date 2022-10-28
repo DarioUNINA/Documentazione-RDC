@@ -1,3 +1,4 @@
+import subprocess
 from socket import *
 import os
 
@@ -9,7 +10,10 @@ clientSocket.connect((serverName,serverPort))
 while True:
     comando = input('inserisci comando: ')
     clientSocket.send(comando.encode())
-    print(clientSocket.recv(16536).decode())
+    result = clientSocket.recv(16536).decode()
+    print(result)
+
+
 
 
 # cat /etc/machine-id -------- id macchina
