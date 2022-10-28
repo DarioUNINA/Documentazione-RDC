@@ -7,19 +7,41 @@ serverPort = 12000
 clientSocket = socket(AF_INET, SOCK_STREAM)
 clientSocket.connect((serverName,serverPort))
 
+def printOptions():
+    print("\nQuale operazione vuoi svolgere?\n")
+    print("1) Comando da terminale\n")
+    print("2) Recupera informazioni macchina\n")
+    print("3) Esci\n")
+
 while True:
-    comando = input('inserisci comando: ')
-    clientSocket.send(comando.encode())
-    result = clientSocket.recv(16536).decode()
-    print(result)
+    printOptions()
+    scelta = input("Inserisci opzione: ")
+    print("\n")
+    if scelta == "1":
+        print("Inserisci i comandi che vuoi eseguire da terminale oppure esc per uscire: ")
+        comando = ""
+        while True:
+            comando = input('inserisci comando: ')
+            if(comando == "esc"):
+                break
+            clientSocket.send(comando.encode())
+            result = clientSocket.recv(16536).decode()
+            print("\nOUTPUT:")
+            print(result)
+    elif scelta == "2":
+        #recupero informazioni varie
+        print("info")
+    elif scelta == "3":
+        break
+    else:
+        print("Inserisci un numero valido")
 
 
 
 
-# cat /etc/machine-id -------- id macchina
-# cat /etc/os-release --------- info generali os
-# cat /proc/meminfo ------ info memoria
-# cat /proc/cpuinfo ----- info dettagliate di ogni core
-# lscpu ---- info architettura cpu
-# lspci ------- info schede (video, audio...)
-# lsusb ------ info dispositivi usb
+
+
+
+
+
+

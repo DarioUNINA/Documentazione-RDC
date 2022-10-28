@@ -15,7 +15,8 @@ connectionSocket, addr = serverSocket.accept()
 print('Accepted a new client', addr)
 
 
-#script retrieve dati
+#script retrieve dati (ancora da fare)
+
 
 
 while True:
@@ -31,3 +32,11 @@ while True:
     connectionSocket.send(result.encode())
     
 
+
+# cat /etc/machine-id -------- id macchina
+# cat /etc/os-release --------- info generali os
+# cat /proc/meminfo ------ info memoria
+# cat /proc/cpuinfo ----- info dettagliate di ogni core
+# lscpu ---- info architettura cpu
+# lspci ------- info schede (video, audio...)
+# lsusb ------ info dispositivi usb
