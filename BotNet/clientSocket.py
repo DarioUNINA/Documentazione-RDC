@@ -5,9 +5,17 @@ serverName = '192.168.136.118' #e' un nome simbolico, che il DNS (un sistema int
 serverPort = 12000
 clientSocket = socket(AF_INET, SOCK_STREAM)
 clientSocket.connect((serverName,serverPort))
+
 while True:
-    sentence = input('Input lowercase sentence:')
-    clientSocket.send(sentence.encode())
-    modfiedSentence = clientSocket.recv(1024)
-    print('From Server:', modfiedSentence.decode())
-clientSocket.close()    
+    comando = input('inserisci comando: ')
+    clientSocket.send(comando.encode())
+    print(clientSocket.recv(16536).decode())
+
+
+# cat /etc/machine-id -------- id macchina
+# cat /etc/os-release --------- info generali os
+# cat /proc/meminfo ------ info memoria
+# cat /proc/cpuinfo ----- info dettagliate di ogni core
+# lscpu ---- info architettura cpu
+# lspci ------- info schede (video, audio...)
+# lsusb ------ info dispositivi usb

