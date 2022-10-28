@@ -19,14 +19,20 @@ print('Accepted a new client', addr)
 
 
 while True:
+    print("prima")
     cmd = connectionSocket.recv(16536).decode()
-    if cmd.startswith("cd"):
-        if len(cmd) < 4 :
-            os.chdir("~/")
+    print("dopo")
+    if cmd.startswith("cd") :
+        print("primo if")
+        if ((cmd[2:]).isspace() or len(cmd)==2) :
+            print("secondo if")
+            os.chdir("home")
         else :
+            print("else")
             os.chdir(cmd[3:])
         result = os.getcwd()
-    else:    
+    else:
+        print("secondo else")
         result = subprocess.run(cmd, shell=True, stdout=subprocess.PIPE, encoding='utf-8').stdout
     connectionSocket.send(result.encode())
     
