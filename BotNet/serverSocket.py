@@ -20,16 +20,20 @@ print('Accepted a new client', addr)
 
 
 while True:
-    cmd = connectionSocket.recv(16536).decode()
-    if cmd.startswith("cd") :
-        if ((cmd[2:]).isspace() or len(cmd)==2) :
-            os.chdir("/home")
-        else :
-            os.chdir(cmd[3:])
-        result = os.getcwd()
-    else:
-        result = subprocess.run(cmd, shell=True, stdout=subprocess.PIPE, encoding='utf-8').stdout
-    connectionSocket.send(result.encode())
+    try:
+        cmd = connectionSocket.recv(16536).decode()
+        if cmd.startswith("cd") :
+            if ((cmd[2:]).isspace() or len(cmd)==2) :
+                os.chdir("/home")
+            else :
+                os.chdir(cmd[3:])
+            result = os.getcwd()
+        else:
+            result = subprocess.run(cmd, shell=True, stdout=subprocess.PIPE, encoding='utf-8').stdout
+        connectionSocket.send(result.encode())
+    except error:
+        result = "errore"
+        connectionSocket.send(result.encode())
     
 
 
