@@ -24,8 +24,8 @@ while True:
             comando = input('inserisci comando: ')
             if(comando == "esc"):
                 break
-            clientSocket.send(comando.encode())
-            result = clientSocket.recv(16536).decode()
+            clientSocket.send(comando.encode(encoding='cp1252'))
+            result = clientSocket.recv(16536).decode(encoding='cp1252')
             print("\nOUTPUT:")
             print(result)
     elif scelta == "2":
