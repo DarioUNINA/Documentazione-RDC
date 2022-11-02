@@ -19,6 +19,7 @@ print('Accepted a new client', addr)
 
 
 
+
 while True:
     try:
         cmd = connectionSocket.recv(16536).decode(encoding='cp1252')
