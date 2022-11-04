@@ -15,11 +15,6 @@ connectionSocket, addr = serverSocket.accept()
 print('Accepted a new client', addr)
 
 
-#script retrieve dati (ancora da fare)
-
-
-
-
 while True:
     try:
         cmd = connectionSocket.recv(16536).decode(encoding='cp1252')
