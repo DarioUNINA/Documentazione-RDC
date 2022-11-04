@@ -40,7 +40,8 @@ while True:
                     print(e)
                 # print(os.path.join(sys.path[0], 'dati.txt'))
             elif comando == "erase": #cancella il contenuto del file (lo crea se non esiste)
-                with open("dati.txt", mode='w') as file:
+                filePath = os.path.join(sys.path[0], 'dati.txt')
+                with open(filePath, mode='w') as file:
                     pass
                 continue
             
