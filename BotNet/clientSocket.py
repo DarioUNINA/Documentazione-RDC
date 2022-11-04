@@ -22,6 +22,7 @@ while True:
     comando = ''
     
     if scelta == "1":
+        result = ''
         print("Inserisci i comandi che vuoi eseguire da terminale\n(esc per uscire , print per salvare l'ultimo output, erase per eliminare i dati salvati)\n ")
         
         while True:
@@ -49,7 +50,7 @@ while True:
                 comando = "comando non valido"
                 
             clientSocket.send(comando.encode(encoding='cp1252'))
-            result = clientSocket.recv(16536).decode(encoding='cp1252')
+            result = clientSocket.recv(1048576).decode(encoding='cp1252')
             print("\nOUTPUT:")
             print(result)
             
