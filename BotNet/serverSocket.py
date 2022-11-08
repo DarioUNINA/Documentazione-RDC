@@ -2,6 +2,7 @@ from socket import *
 import subprocess
 import os
 from pathlib import Path
+import traceback
 
 serverPort = 12000
 serverSocket = socket(AF_INET,SOCK_STREAM) #SOCK_STREAM = TCP
@@ -29,7 +30,8 @@ while True:
             if result == '':
                 result = "comando non valido\n"
         connectionSocket.send(result.encode(encoding='cp1252'))
-    except:
+    except Exception:
+        traceback.print_exc()
         result = "errore"
         connectionSocket.send(result.encode(encoding='cp1252'))
     
