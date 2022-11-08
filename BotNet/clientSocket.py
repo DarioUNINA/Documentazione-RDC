@@ -49,8 +49,8 @@ while True:
             elif comando == "" or comando.isspace():
                 comando = "comando non valido"
                 
-            clientSocket.send(comando.encode(encoding='cp1252'))
-            result = clientSocket.recv(1048576).decode(encoding='cp1252')
+            clientSocket.send(comando.encode(encoding='latin-1'))
+            result = clientSocket.recv(1048576).decode(encoding='latin-1')
             print("\nOUTPUT:")
             print(result)
             

