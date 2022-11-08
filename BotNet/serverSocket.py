@@ -32,9 +32,10 @@ while True:
         connectionSocket.send(result.encode(encoding='latin-1'))
     except:
         traceback.print_exc()
-        
         result = "errore"
         connectionSocket.send(result.encode(encoding='latin-1'))
+
+    serverSocket.close()
     
 
 

@@ -60,6 +60,8 @@ while True:
     else:
         print("Inserisci un numero valido")
 
+    clientSocket.close()
+
 
 
 
