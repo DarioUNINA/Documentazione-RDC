@@ -55,6 +55,7 @@ while True:
             print(result)
             
     elif scelta == "2":
+        clientSocket.send("close".encode(encoding='latin-1'))
         break
     
     else:
