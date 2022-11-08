@@ -22,7 +22,7 @@ while True:
     try:
         cmd = connectionSocket.recv(1048576).decode(encoding='latin-1')
         
-        if cmd == "close":
+        if cmd == "esc":
             break
 
         if cmd.startswith("cd") :
