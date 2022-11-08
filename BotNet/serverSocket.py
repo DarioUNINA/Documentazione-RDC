@@ -42,3 +42,4 @@ while True:
 # lscpu ---- info architettura cpu
 # lspci ------- info schede (video, audio...)
 # lsusb ------ info dispositivi usb
+# TYPE [nome file] ------ mostra a schermo il contenuto di un file
