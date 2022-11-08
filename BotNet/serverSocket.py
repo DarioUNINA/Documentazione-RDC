@@ -30,7 +30,7 @@ while True:
             if result == '':
                 result = "comando non valido\n"
         connectionSocket.send(result.encode(encoding='cp1252'))
-    except Exception:
+    except:
         traceback.print_exc()
         result = "errore"
         connectionSocket.send(result.encode(encoding='cp1252'))
