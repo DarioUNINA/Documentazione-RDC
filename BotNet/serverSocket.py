@@ -40,7 +40,8 @@ while True:
         result = "errore"
         connectionSocket.send(result.encode(encoding='latin-1'))
 
-    serverSocket.close()
+serverSocket.close()
+print("\nConnection closed\n")
     
 
 

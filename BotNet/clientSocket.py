@@ -2,7 +2,7 @@ from socket import *
 import os
 import sys
 
-serverName = '192.168.1.172' #e' un nome simbolico, che il DNS (un sistema interno) che lo traduce in IP
+serverName = 'localhost' #e' un nome simbolico, che il DNS (un sistema interno) che lo traduce in IP
 serverPort = 12000
 clientSocket = socket(AF_INET, SOCK_STREAM)
 clientSocket.connect((serverName,serverPort))
@@ -61,7 +61,8 @@ while True:
     else:
         print("Inserisci un numero valido")
 
-    clientSocket.close()
+clientSocket.close()
+print("Connection closed\n")
 
 
 

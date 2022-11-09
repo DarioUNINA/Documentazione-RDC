@@ -1,5 +1,6 @@
 
 ******************************************
+
 Android
 Applicazioni
 Desktop
@@ -13,40 +14,3 @@ Software
 Templates
 UniversitÃ 
 Videos
-
-******************************************
-Android
-Applicazioni
-Desktop
-Documents
-Downloads
-Music
-Pictures
-Progetti
-Public
-Software
-Templates
-UniversitÃ 
-Videos
-
-******************************************
-
- Il volume nell'unit… C Š Windows
- Numero di serie del volume: F66B-D779
-
- Directory di C:\Users\Dario\OneDrive\Desktop
-
-08/11/2022  11:04    <DIR>          .
-08/11/2022  11:04    <DIR>          ..
-01/11/2022  19:09    <DIR>          .idea
-01/11/2022  18:54             1.166 client.py
-08/11/2022  11:14    <DIR>          Dario
-05/03/2022  14:03    <DIR>          Documenti condominio
-07/05/2022  16:17    <DIR>          Documenti Mario
-01/05/2021  12:38             2.420 Excel.lnk
-05/07/2022  00:10             2.365 Microsoft Edge.lnk
-01/05/2021  12:37             2.367 Microsoft Teams.lnk
-01/11/2022  19:20             1.595 server.py
-01/11/2022  19:11             1.417 Visual Studio Code.lnk
-               6 File         11.330 byte
-               6 Directory  74.958.086.144 byte disponibili
