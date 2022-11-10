@@ -1,17 +1,2 @@
-
-******************************************
-
-Android
-Applicazioni
-Desktop
-Documents
-Downloads
-Music
-Pictures
-Progetti
-Public
-Software
-Templates
-UniversitÃ 
-Videos
-posix.uname_result(sysname='Linux', nodename='Dario-Laptop', release='5.15.0-52-generic', version='#58-Ubuntu SMP Thu Oct 13 08:03:55 UTC 2022', machine='x86_64')dariolshwlscpuifconfignetstat -tnetstat -uidescdariolshwlscpuifconfignetstat -tnetstat -uidesc
+Windows
+systeminfoipconfiggetmacnetstat -p TCPnetstat -p UDPesc
