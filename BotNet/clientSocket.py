@@ -20,11 +20,7 @@ def connection():
         except ConnectionRefusedError:
 
             print("Errore di connessione\n")
-            time.sleep(5)
-            break
-
-        except:
-            print("Errore sconosciuto")
+            time.sleep(2)
 
         else:
 
