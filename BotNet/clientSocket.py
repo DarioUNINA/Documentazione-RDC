@@ -2,10 +2,21 @@ from socket import *
 import os
 import sys
 
-serverName = 'localhost' #e' un nome simbolico, che il DNS (un sistema interno) che lo traduce in IP
-serverPort = 12000
-clientSocket = socket(AF_INET, SOCK_STREAM)
-clientSocket.connect((serverName,serverPort))
+
+while True:
+    try:
+        serverName = 'localhost' #e' un nome simbolico, che il DNS (un sistema interno) che lo traduce in IP
+        serverPort = 12000
+        clientSocket = socket(AF_INET, SOCK_STREAM)
+        clientSocket.connect((serverName,serverPort))
+    except:
+        print("Errore di connesione\n")
+    else:
+        print("Connessione effettuata correttamente")
+        break
+
+
+
 
 def printOptions():
     print("\nQuale operazione vuoi svolgere?\n")

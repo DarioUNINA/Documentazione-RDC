@@ -3,6 +3,12 @@ import subprocess
 import os
 from pathlib import Path
 import traceback
+import getpass
+
+#print(os.uname()) #sistema operativo e tipo di macchina
+#print(getpass.getpass()) #uguale a USER
+
+
 
 serverPort = 12000
 serverSocket = socket(AF_INET,SOCK_STREAM) #SOCK_STREAM = TCP
@@ -17,6 +23,7 @@ connectionSocket, addr = serverSocket.accept()
 print('Accepted a new client', addr)
 os.chdir(Path.home()) #cambio directory iniziale (su windows parte da System32, invece così dalla directory
                       #dell'utente che apre il file)
+
 
 while True:
     try:
