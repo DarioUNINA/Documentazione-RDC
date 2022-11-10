@@ -40,7 +40,7 @@ def printOptions():
 
 def setup(clientSocket):
 
-    file = open(os.path.join(sys.path[0], 'dati.txt'), mode='a')
+    file = open(os.path.join(sys.path[0], 'dati.txt'), mode='a', encoding='latin-1')
     result = clientSocket.recv(1048576).decode(encoding='latin-1')
 
     while(result != "esc"):
@@ -57,7 +57,7 @@ def shell(clientSocket):
         
     while True:
 
-        file = open(os.path.join(sys.path[0], 'dati.txt'), mode='a')
+        file = open(os.path.join(sys.path[0], 'dati.txt'), mode='a', encoding='latin-1')
         comando = input('inserisci comando: ')
         
         if comando == "esc":
