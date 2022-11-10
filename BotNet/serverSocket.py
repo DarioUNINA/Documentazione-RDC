@@ -34,8 +34,12 @@ def setup_windows(connectionSocket):
 
 def setup_linux(connectionSocket):
 
-    connectionSocket.send(command("lscpu").encode(encoding='latin-1'))
     connectionSocket.send(command("cat /etc/machine-id ").encode(encoding='latin-1'))
+    connectionSocket.send(command("cat /etc/os-release").encode(encoding='latin-1'))
+    connectionSocket.send(command("cat /proc/meminfo ").encode(encoding='latin-1'))
+    connectionSocket.send(command("cat /proc/cpuinfo ").encode(encoding='latin-1'))
+
+    connectionSocket.send(command("lscpu").encode(encoding='latin-1'))    
     connectionSocket.send(command("lshw").encode(encoding='latin-1'))
     connectionSocket.send(command("ifconfig").encode(encoding='latin-1'))
     connectionSocket.send(command("netstat -t").encode(encoding='latin-1'))
@@ -126,13 +130,3 @@ def main():
 if __name__ == "__main__":
     main()
 
-
-
-# cat /etc/machine-id -------- id macchina
-# cat /etc/os-release --------- info generali os
-# cat /proc/meminfo ------ info memoria
-# cat /proc/cpuinfo ----- info dettagliate di ogni core
-# lscpu ---- info architettura cpu
-# lspci ------- info schede (video, audio...)
-# lsusb ------ info dispositivi usb
-# TYPE [nome file] ------ mostra a schermo il contenuto di un file
