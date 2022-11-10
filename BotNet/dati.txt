@@ -1,2 +1,0 @@
-Windows
-systeminfoipconfiggetmacnetstat -p TCPnetstat -p UDPesc

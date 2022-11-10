@@ -4,6 +4,7 @@ import sys
 import time
 
 
+
 def connection():
 
     while True:
@@ -39,60 +40,37 @@ def printOptions():
 
 def setup(clientSocket):
 
-    #-----
-    # file = open(os.path.join(sys.path[0], 'dati.txt'), mode='a')
+    file = open(os.path.join(sys.path[0], 'dati.txt'), mode='a')
+    result = clientSocket.recv(1048576).decode(encoding='latin-1')
 
-    # result = clientSocket.recv(1048576).decode(encoding='latin-1')
+    while(result != "esc"):
+        file.write("\n******************************************\n\n"+result)
+        result = clientSocket.recv(1048576).decode(encoding='latin-1')
 
-    # while(result != 'esc'):
-    #     file.write(result)
-    #     result = clientSocket.recv(1048576).decode(encoding='latin-1')
-    #------
-
-    cmd = ''
-    while(cmd != 'esc'):###
-        cmd = clientSocket.recv(1048576).decode(encoding='latin-1')###
-        
-        ## comando va runnato con subprocess
-        ## result = ...
-        with open(os.path.join(sys.path[0], 'dati.txt'), mode='a') as file:###
-            file.write(result+"\n")###
-        
-
-    return file
+    file.close()
 
 
-
-def shell(file,clientSocket):
+def shell(clientSocket):
 
     print("Inserisci i comandi che vuoi eseguire da terminale\n(esc per uscire , print per salvare l'ultimo output, erase per eliminare i dati salvati)\n ")
     result = ''
         
     while True:
+
+        file = open(os.path.join(sys.path[0], 'dati.txt'), mode='a')
         comando = input('inserisci comando: ')
         
         if comando == "esc":
+            file.close()
             break
         
         elif comando == "print": #scrive sul file l'ultimo output (lo crea se non esiste)
-
-            #----
-            #file.write("\n******************************************\n\n"+result)
-            #continue
-            #-----
-
-            with open(os.path.join(sys.path[0], 'dati.txt'), mode='a') as file:###
-                file.write("\n******************************************\n\n"+result)###
-            continue###
+            file.write("\n******************************************\n\n"+result)
+            continue
 
         elif comando == "erase": #cancella il contenuto del file (lo crea se non esiste)
-            #------
-            # file.truncate(0)
-            # continue
-            #------
-
-            with open(os.path.join(sys.path[0], 'dati.txt'), mode='w') as file:###
-                pass###
+            file.truncate(0)
+            continue
 
         elif comando == "" or comando.isspace():
             print("\ncomando non valido\n")
@@ -104,15 +82,14 @@ def shell(file,clientSocket):
             print("\nOUTPUT:\n")
             print(result)
     
-    file.close()
+        file.close()
 
 
 
 def main():
 
     clientSocket = connection()
-    file = setup(clientSocket)
-
+    setup(clientSocket)
 
     while True:
 
@@ -120,7 +97,7 @@ def main():
         scelta = input()
         
         if scelta == "1":
-            shell(file,clientSocket)
+            shell(clientSocket)
 
         elif scelta == "2":
             clientSocket.send("esc".encode(encoding='latin-1'))
@@ -130,7 +107,6 @@ def main():
             print("Inserisci un numero valido")
 
     clientSocket.close()
-    file.close()
     print("Connection closed\n")
 
 

