@@ -68,16 +68,28 @@ def shell(serverSocket):
         if comando == "esc":
             file.close()
             break
+
+        try:
+
+            if comando == "recv":
+                result = serverSocket.recv(1048576).decode(encoding='latin-1')
+                print(result)
+                continue            
+
+        except KeyboardInterrupt:
+            print("\n")
+            continue
+
         
-        elif comando == "print": #scrive sul file l'ultimo output (lo crea se non esiste)
+        if comando == "print": #scrive sul file l'ultimo output (lo crea se non esiste)
             file.write("\n******************************************\n\n"+result)
             continue
 
-        elif comando == "erase": #cancella il contenuto del file (lo crea se non esiste)
+        if comando == "erase": #cancella il contenuto del file (lo crea se non esiste)
             file.truncate(0)
             continue
 
-        elif comando == "" or comando.isspace():
+        if comando == "" or comando.isspace():
             print("\ncomando non valido\n")
             continue
         
