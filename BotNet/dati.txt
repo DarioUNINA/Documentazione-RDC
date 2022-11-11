@@ -1,0 +1,732 @@
+
+******************************************
+
+Linux
+******************************************
+
+gianmadd
+******************************************
+
+09143d0261be487380a9ec9bf41d5922
+
+******************************************
+
+NAME="Linux Mint"
+VERSION="20.3 (Una)"
+ID=linuxmint
+ID_LIKE=ubuntu
+PRETTY_NAME="Linux Mint 20.3"
+VERSION_ID="20.3"
+HOME_URL="https://www.linuxmint.com/"
+SUPPORT_URL="https://forums.linuxmint.com/"
+BUG_REPORT_URL="http://linuxmint-troubleshooting-guide.readthedocs.io/en/latest/"
+PRIVACY_POLICY_URL="https://www.linuxmint.com/"
+VERSION_CODENAME=una
+UBUNTU_CODENAME=focal
+
+******************************************
+
+MemTotal:        7942148 kB
+MemFree:          451764 kB
+MemAvailable:    4044980 kB
+Buffers:           88316 kB
+Cached:          4416060 kB
+SwapCached:           44 kB
+Active:          2693056 kB
+Inactive:        3933756 kB
+Active(anon):     153848 kB
+Inactive(anon):  2738132 kB
+Active(file):    2539208 kB
+Inactive(file):  1195624 kB
+Unevictable:      365548 kB
+Mlocked:              64 kB
+SwapTotal:       3999740 kB
+SwapFree:        3983100 kB
+Dirty:               220 kB
+Writeback:             0 kB
+AnonPages:       2487992 kB
+Mapped:           644588 kB
+Shmem:            769532 kB
+KReclaimable:     166428 kB
+Slab:             299692 kB
+SReclaimable:     166428 kB
+SUnreclaim:       133264 kB
+KernelStack:       18880 kB
+PageTables:        40664 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     7970812 kB
+Committed_AS:   11446324 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:       48368 kB
+VmallocChunk:          0 kB
+Percpu:             6496 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+ShmemHugePages:        0 kB
+ShmemPmdMapped:        0 kB
+FileHugePages:         0 kB
+FilePmdMapped:         0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+Hugetlb:               0 kB
+DirectMap4k:      321208 kB
+DirectMap2M:     4722688 kB
+DirectMap1G:     5242880 kB
+
+******************************************
+
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 126
+model name	: Intel(R) Core(TM) i5-1035G1 CPU @ 1.00GHz
+stepping	: 5
+microcode	: 0xb2
+cpu MHz		: 1200.000
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 8
+core id		: 0
+cpu cores	: 4
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 27
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid avx512f avx512dq rdseed adx smap avx512ifma clflushopt intel_pt avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves split_lock_detect dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp hwp_pkg_req avx512vbmi umip pku ospke avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid fsrm md_clear flush_l1d arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_1gb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_v1 spectre_v2 spec_store_bypass swapgs itlb_multihit srbds mmio_stale_data retbleed eibrs_pbrsb
+bogomips	: 2380.80
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 126
+model name	: Intel(R) Core(TM) i5-1035G1 CPU @ 1.00GHz
+stepping	: 5
+microcode	: 0xb2
+cpu MHz		: 2164.758
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 8
+core id		: 1
+cpu cores	: 4
+apicid		: 2
+initial apicid	: 2
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 27
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid avx512f avx512dq rdseed adx smap avx512ifma clflushopt intel_pt avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves split_lock_detect dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp hwp_pkg_req avx512vbmi umip pku ospke avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid fsrm md_clear flush_l1d arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_1gb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_v1 spectre_v2 spec_store_bypass swapgs itlb_multihit srbds mmio_stale_data retbleed eibrs_pbrsb
+bogomips	: 2380.80
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 2
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 126
+model name	: Intel(R) Core(TM) i5-1035G1 CPU @ 1.00GHz
+stepping	: 5
+microcode	: 0xb2
+cpu MHz		: 2155.255
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 8
+core id		: 2
+cpu cores	: 4
+apicid		: 4
+initial apicid	: 4
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 27
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid avx512f avx512dq rdseed adx smap avx512ifma clflushopt intel_pt avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves split_lock_detect dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp hwp_pkg_req avx512vbmi umip pku ospke avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid fsrm md_clear flush_l1d arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_1gb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_v1 spectre_v2 spec_store_bypass swapgs itlb_multihit srbds mmio_stale_data retbleed eibrs_pbrsb
+bogomips	: 2380.80
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 3
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 126
+model name	: Intel(R) Core(TM) i5-1035G1 CPU @ 1.00GHz
+stepping	: 5
+microcode	: 0xb2
+cpu MHz		: 2180.952
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 8
+core id		: 3
+cpu cores	: 4
+apicid		: 6
+initial apicid	: 6
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 27
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid avx512f avx512dq rdseed adx smap avx512ifma clflushopt intel_pt avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves split_lock_detect dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp hwp_pkg_req avx512vbmi umip pku ospke avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid fsrm md_clear flush_l1d arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_1gb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_v1 spectre_v2 spec_store_bypass swapgs itlb_multihit srbds mmio_stale_data retbleed eibrs_pbrsb
+bogomips	: 2380.80
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 4
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 126
+model name	: Intel(R) Core(TM) i5-1035G1 CPU @ 1.00GHz
+stepping	: 5
+microcode	: 0xb2
+cpu MHz		: 1200.000
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 8
+core id		: 0
+cpu cores	: 4
+apicid		: 1
+initial apicid	: 1
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 27
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid avx512f avx512dq rdseed adx smap avx512ifma clflushopt intel_pt avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves split_lock_detect dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp hwp_pkg_req avx512vbmi umip pku ospke avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid fsrm md_clear flush_l1d arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_1gb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_v1 spectre_v2 spec_store_bypass swapgs itlb_multihit srbds mmio_stale_data retbleed eibrs_pbrsb
+bogomips	: 2380.80
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 5
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 126
+model name	: Intel(R) Core(TM) i5-1035G1 CPU @ 1.00GHz
+stepping	: 5
+microcode	: 0xb2
+cpu MHz		: 1200.000
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 8
+core id		: 1
+cpu cores	: 4
+apicid		: 3
+initial apicid	: 3
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 27
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid avx512f avx512dq rdseed adx smap avx512ifma clflushopt intel_pt avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves split_lock_detect dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp hwp_pkg_req avx512vbmi umip pku ospke avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid fsrm md_clear flush_l1d arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_1gb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_v1 spectre_v2 spec_store_bypass swapgs itlb_multihit srbds mmio_stale_data retbleed eibrs_pbrsb
+bogomips	: 2380.80
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 6
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 126
+model name	: Intel(R) Core(TM) i5-1035G1 CPU @ 1.00GHz
+stepping	: 5
+microcode	: 0xb2
+cpu MHz		: 2766.080
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 8
+core id		: 2
+cpu cores	: 4
+apicid		: 5
+initial apicid	: 5
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 27
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid avx512f avx512dq rdseed adx smap avx512ifma clflushopt intel_pt avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves split_lock_detect dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp hwp_pkg_req avx512vbmi umip pku ospke avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid fsrm md_clear flush_l1d arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_1gb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_v1 spectre_v2 spec_store_bypass swapgs itlb_multihit srbds mmio_stale_data retbleed eibrs_pbrsb
+bogomips	: 2380.80
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 7
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 126
+model name	: Intel(R) Core(TM) i5-1035G1 CPU @ 1.00GHz
+stepping	: 5
+microcode	: 0xb2
+cpu MHz		: 1200.000
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 8
+core id		: 3
+cpu cores	: 4
+apicid		: 7
+initial apicid	: 7
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 27
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid avx512f avx512dq rdseed adx smap avx512ifma clflushopt intel_pt avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves split_lock_detect dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp hwp_pkg_req avx512vbmi umip pku ospke avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid fsrm md_clear flush_l1d arch_capabilities
+vmx flags	: vnmi preemption_timer posted_intr invvpid ept_x_only ept_ad ept_1gb flexpriority apicv tsc_offset vtpr mtf vapic ept vpid unrestricted_guest vapic_reg vid ple pml ept_mode_based_exec tsc_scaling
+bugs		: spectre_v1 spectre_v2 spec_store_bypass swapgs itlb_multihit srbds mmio_stale_data retbleed eibrs_pbrsb
+bogomips	: 2380.80
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+
+******************************************
+
+Architecture:                    x86_64
+CPU op-mode(s):                  32-bit, 64-bit
+Byte Order:                      Little Endian
+Address sizes:                   39 bits physical, 48 bits virtual
+CPU(s):                          8
+On-line CPU(s) list:             0-7
+Thread(s) per core:              2
+Core(s) per socket:              4
+Socket(s):                       1
+NUMA node(s):                    1
+Vendor ID:                       GenuineIntel
+CPU family:                      6
+Model:                           126
+Model name:                      Intel(R) Core(TM) i5-1035G1 CPU @ 1.00GHz
+Stepping:                        5
+CPU MHz:                         1200.000
+CPU max MHz:                     3600,0000
+CPU min MHz:                     400,0000
+BogoMIPS:                        2380.80
+Virtualization:                  VT-x
+L1d cache:                       192 KiB
+L1i cache:                       128 KiB
+L2 cache:                        2 MiB
+L3 cache:                        6 MiB
+NUMA node0 CPU(s):               0-7
+Vulnerability Itlb multihit:     KVM: Mitigation: VMX disabled
+Vulnerability L1tf:              Not affected
+Vulnerability Mds:               Not affected
+Vulnerability Meltdown:          Not affected
+Vulnerability Mmio stale data:   Mitigation; Clear CPU buffers; SMT vulnerable
+Vulnerability Retbleed:          Mitigation; Enhanced IBRS
+Vulnerability Spec store bypass: Mitigation; Speculative Store Bypass disabled via prctl and seccomp
+Vulnerability Spectre v1:        Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+Vulnerability Spectre v2:        Mitigation; Enhanced IBRS, IBPB conditional, RSB filling, PBRSB-eIBRS SW sequence
+Vulnerability Srbds:             Mitigation; Microcode
+Vulnerability Tsx async abort:   Not affected
+Flags:                           fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid avx512f avx512dq rdseed adx smap avx512ifma clflushopt intel_pt avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves split_lock_detect dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp hwp_pkg_req avx512vbmi umip pku ospke avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid fsrm md_clear flush_l1d arch_capabilities
+
+******************************************
+
+gianmadd
+    description: Computer
+    width: 64 bits
+    capabilities: smp vsyscall32
+  *-core
+       description: Motherboard
+       physical id: 0
+     *-memory
+          description: System memory
+          physical id: 0
+          size: 8064MiB
+     *-cpu
+          product: Intel(R) Core(TM) i5-1035G1 CPU @ 1.00GHz
+          vendor: Intel Corp.
+          physical id: 1
+          bus info: cpu@0
+          size: 2283MHz
+          capacity: 3600MHz
+          width: 64 bits
+          capabilities: fpu fpu_exception wp vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp x86-64 constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid avx512f avx512dq rdseed adx smap avx512ifma clflushopt intel_pt avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves split_lock_detect dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp hwp_pkg_req avx512vbmi umip pku ospke avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid fsrm md_clear flush_l1d arch_capabilities cpufreq
+     *-pci
+          description: Host bridge
+          product: Intel Corporation
+          vendor: Intel Corporation
+          physical id: 100
+          bus info: pci@0000:00:00.0
+          version: 03
+          width: 32 bits
+          clock: 33MHz
+          configuration: driver=icl_uncore
+          resources: irq:0
+        *-display
+             description: VGA compatible controller
+             product: Intel Corporation
+             vendor: Intel Corporation
+             physical id: 2
+             bus info: pci@0000:00:02.0
+             version: 07
+             width: 64 bits
+             clock: 33MHz
+             capabilities: vga_controller bus_master cap_list rom
+             configuration: driver=i915 latency=0
+             resources: iomemory:600-5ff iomemory:400-3ff irq:137 memory:6012000000-6012ffffff memory:4000000000-400fffffff ioport:4000(size=64) memory:c0000-dffff
+        *-generic
+             description: Signal processing controller
+             product: Intel Corporation
+             vendor: Intel Corporation
+             physical id: 4
+             bus info: pci@0000:00:04.0
+             version: 03
+             width: 64 bits
+             clock: 33MHz
+             capabilities: cap_list
+             configuration: driver=proc_thermal latency=0
+             resources: iomemory:600-5ff irq:16 memory:6013110000-601311ffff
+        *-usb
+             description: USB controller
+             product: Ice Lake-LP USB 3.1 xHCI Host Controller
+             vendor: Intel Corporation
+             physical id: 14
+             bus info: pci@0000:00:14.0
+             version: 30
+             width: 64 bits
+             clock: 33MHz
+             capabilities: xhci bus_master cap_list
+             configuration: driver=xhci_hcd latency=0
+             resources: iomemory:600-5ff irq:125 memory:6013100000-601310ffff
+        *-memory UNCLAIMED
+             description: RAM memory
+             product: Intel Corporation
+             vendor: Intel Corporation
+             physical id: 14.2
+             bus info: pci@0000:00:14.2
+             version: 30
+             width: 64 bits
+             clock: 33MHz (30.3ns)
+             capabilities: cap_list
+             configuration: latency=0
+             resources: iomemory:600-5ff iomemory:600-5ff memory:6013128000-6013129fff memory:6013130000-6013130fff
+        *-network
+             description: Wireless interface
+             product: Killer Wi-Fi 6 AX1650i 160MHz Wireless Network Adapter (201NGW)
+             vendor: Intel Corporation
+             physical id: 14.3
+             bus info: pci@0000:00:14.3
+             logical name: wlo1
+             version: 30
+             serial: b8:9a:2a:13:2d:ba
+             width: 64 bits
+             clock: 33MHz
+             capabilities: bus_master cap_list ethernet physical wireless
+             configuration: broadcast=yes driver=iwlwifi driverversion=5.15.0-52-generic firmware=66.f1c864e0.0 Qu-c0-jf-b0-66.uc ip=192.168.1.248 latency=0 link=yes multicast=yes wireless=IEEE 802.11
+             resources: iomemory:600-5ff irq:16 memory:6013124000-6013127fff
+        *-serial:0
+             description: Serial bus controller
+             product: Ice Lake-LP Serial IO I2C Controller #0
+             vendor: Intel Corporation
+             physical id: 15
+             bus info: pci@0000:00:15.0
+             version: 30
+             width: 64 bits
+             clock: 33MHz
+             capabilities: bus_master cap_list
+             configuration: driver=intel-lpss latency=0
+             resources: iomemory:400-3ff irq:16 memory:4010000000-4010000fff
+        *-serial:1
+             description: Serial bus controller
+             product: Ice Lake-LP Serial IO I2C Controller #1
+             vendor: Intel Corporation
+             physical id: 15.1
+             bus info: pci@0000:00:15.1
+             version: 30
+             width: 64 bits
+             clock: 33MHz
+             capabilities: bus_master cap_list
+             configuration: driver=intel-lpss latency=0
+             resources: iomemory:400-3ff irq:17 memory:4010001000-4010001fff
+        *-communication:0
+             description: Communication controller
+             product: Management Engine Interface
+             vendor: Intel Corporation
+             physical id: 16
+             bus info: pci@0000:00:16.0
+             version: 30
+             width: 64 bits
+             clock: 33MHz
+             capabilities: bus_master cap_list
+             configuration: driver=mei_me latency=0
+             resources: iomemory:600-5ff irq:138 memory:601312d000-601312dfff
+        *-sata
+             description: SATA controller
+             product: Ice Lake-LP SATA Controller [AHCI mode]
+             vendor: Intel Corporation
+             physical id: 17
+             bus info: pci@0000:00:17.0
+             version: 30
+             width: 32 bits
+             clock: 66MHz
+             capabilities: sata ahci_1.0 bus_master cap_list
+             configuration: driver=ahci latency=0
+             resources: irq:126 memory:81200000-81201fff memory:81203000-812030ff ioport:4090(size=8) ioport:4080(size=4) ioport:4060(size=32) memory:81202000-812027ff
+        *-pci:0
+             description: PCI bridge
+             product: Intel Corporation
+             vendor: Intel Corporation
+             physical id: 1c
+             bus info: pci@0000:00:1c.0
+             version: 30
+             width: 32 bits
+             clock: 33MHz
+             capabilities: pci normal_decode bus_master cap_list
+             configuration: driver=pcieport
+             resources: irq:122
+        *-pci:1
+             description: PCI bridge
+             product: Ice Lake-LP PCI Express Root Port #5
+             vendor: Intel Corporation
+             physical id: 1c.4
+             bus info: pci@0000:00:1c.4
+             version: 30
+             width: 32 bits
+             clock: 33MHz
+             capabilities: pci normal_decode bus_master cap_list
+             configuration: driver=pcieport
+             resources: irq:123 ioport:3000(size=4096) memory:80000000-810fffff ioport:6000000000(size=301989888)
+           *-display
+                description: 3D controller
+                product: GP108M [GeForce MX330]
+                vendor: NVIDIA Corporation
+                physical id: 0
+                bus info: pci@0000:02:00.0
+                version: a1
+                width: 64 bits
+                clock: 33MHz
+                capabilities: cap_list rom
+                configuration: driver=nouveau latency=0
+                resources: irq:136 memory:80000000-80ffffff memory:6000000000-600fffffff memory:6010000000-6011ffffff ioport:3000(size=128) memory:81000000-8107ffff
+        *-pci:2
+             description: PCI bridge
+             product: Intel Corporation
+             vendor: Intel Corporation
+             physical id: 1d
+             bus info: pci@0000:00:1d.0
+             version: 30
+             width: 32 bits
+             clock: 33MHz
+             capabilities: pci normal_decode bus_master cap_list
+             configuration: driver=pcieport
+             resources: irq:124 memory:81100000-811fffff
+           *-storage
+                description: Non-Volatile memory controller
+                product: WD Black 2018/PC SN520 NVMe SSD
+                vendor: Sandisk Corp
+                physical id: 0
+                bus info: pci@0000:03:00.0
+                version: 01
+                width: 64 bits
+                clock: 33MHz
+                capabilities: storage nvm_express bus_master cap_list
+                configuration: driver=nvme latency=0
+                resources: irq:16 memory:81100000-81103fff
+              *-nvme0
+                   description: NVMe device
+                   product: WDC PC SN520 SDAPNUW-512G-1202
+                   physical id: 0
+                   logical name: /dev/nvme0
+                   version: 20200000
+                   serial: 19493E452103
+                   configuration: nqn=nqn.2018-01.com.wdc:nguid:E8238FA6BF53-0001-001B444A44C6D864 state=live
+                 *-namespace
+                      description: NVMe namespace
+                      physical id: 1
+                      logical name: /dev/nvme0n1
+        *-communication:1
+             description: Communication controller
+             product: Ice Lake-LP Serial IO UART Controller #0
+             vendor: Intel Corporation
+             physical id: 1e
+             bus info: pci@0000:00:1e.0
+             version: 30
+             width: 64 bits
+             clock: 33MHz
+             capabilities: bus_master cap_list
+             configuration: driver=intel-lpss latency=0
+             resources: iomemory:400-3ff irq:20 memory:4010002000-4010002fff
+        *-serial:2
+             description: Serial bus controller
+             product: Ice Lake-LP Serial IO SPI Controller #0
+             vendor: Intel Corporation
+             physical id: 1e.2
+             bus info: pci@0000:00:1e.2
+             version: 30
+             width: 64 bits
+             clock: 33MHz
+             capabilities: bus_master cap_list
+             configuration: driver=intel-lpss latency=0
+             resources: iomemory:400-3ff irq:22 memory:4010003000-4010003fff
+        *-isa
+             description: ISA bridge
+             product: Ice Lake-LP LPC Controller
+             vendor: Intel Corporation
+             physical id: 1f
+             bus info: pci@0000:00:1f.0
+             version: 30
+             width: 32 bits
+             clock: 33MHz
+             capabilities: isa bus_master
+             configuration: latency=0
+        *-multimedia
+             description: Audio device
+             product: Smart Sound Technology Audio Controller
+             vendor: Intel Corporation
+             physical id: 1f.3
+             bus info: pci@0000:00:1f.3
+             version: 30
+             width: 64 bits
+             clock: 33MHz
+             capabilities: bus_master cap_list
+             configuration: driver=snd_hda_intel latency=32
+             resources: iomemory:600-5ff iomemory:600-5ff irq:149 memory:6013120000-6013123fff memory:6013000000-60130fffff
+        *-serial:3
+             description: SMBus
+             product: Ice Lake-LP SMBus Controller
+             vendor: Intel Corporation
+             physical id: 1f.4
+             bus info: pci@0000:00:1f.4
+             version: 30
+             width: 64 bits
+             clock: 33MHz
+             configuration: driver=i801_smbus latency=0
+             resources: iomemory:600-5ff irq:16 memory:601312a000-601312a0ff ioport:efa0(size=32)
+        *-serial:4 UNCLAIMED
+             description: Serial bus controller
+             product: Ice Lake-LP SPI Controller
+             vendor: Intel Corporation
+             physical id: 1f.5
+             bus info: pci@0000:00:1f.5
+             version: 30
+             width: 32 bits
+             clock: 33MHz
+             configuration: latency=0
+             resources: memory:81204000-81204fff
+     *-pnp00:00
+          product: PnP device PNP0c02
+          physical id: 2
+          capabilities: pnp
+          configuration: driver=system
+     *-pnp00:01
+          product: PnP device INT3f0d
+          vendor: Interphase Corporation
+          physical id: 3
+          capabilities: pnp
+          configuration: driver=system
+     *-pnp00:02
+          product: PnP device ATK3001
+          vendor: Allied Telesyn Int'l
+          physical id: 4
+          capabilities: pnp
+          configuration: driver=i8042 kbd
+     *-pnp00:03
+          product: PnP device PNP0c02
+          physical id: 5
+          capabilities: pnp
+          configuration: driver=system
+     *-pnp00:04
+          product: PnP device PNP0c02
+          physical id: 6
+          capabilities: pnp
+          configuration: driver=system
+     *-pnp00:05
+          product: PnP device PNP0c02
+          physical id: 7
+          capabilities: pnp
+          configuration: driver=system
+     *-pnp00:06
+          product: PnP device PNP0c02
+          physical id: 8
+          capabilities: pnp
+          configuration: driver=system
+  *-network DISABLED
+       description: Ethernet interface
+       physical id: 1
+       logical name: virbr0-nic
+       serial: 52:54:00:34:31:f9
+       size: 10Mbit/s
+       capabilities: ethernet physical
+       configuration: autonegotiation=off broadcast=yes driver=tun driverversion=1.6 duplex=full link=no multicast=yes port=twisted pair speed=10Mbit/s
+
+******************************************
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 17255  bytes 3682315 (3.6 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 17255  bytes 3682315 (3.6 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+virbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 192.168.122.1  netmask 255.255.255.0  broadcast 192.168.122.255
+        ether 52:54:00:34:31:f9  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlo1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.1.248  netmask 255.255.255.0  broadcast 192.168.1.255
+        inet6 2001:b07:6468:340b:9489:d70:3d7f:ef8a  prefixlen 64  scopeid 0x0<global>
+        inet6 2001:b07:6468:340b:a65:f9b0:e8ae:7c8a  prefixlen 64  scopeid 0x0<global>
+        inet6 fe80::da01:1423:2b4e:179d  prefixlen 64  scopeid 0x20<link>
+        ether b8:9a:2a:13:2d:ba  txqueuelen 1000  (Ethernet)
+        RX packets 161468  bytes 89042093 (89.0 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 497311  bytes 133001187 (133.0 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+
+******************************************
+
+Active Internet connections (w/o servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 gianmadd.lan:40960      162.159.128.235:https   ESTABLISHED
+tcp        0      0 gianmadd.lan:59108      ec2-52-42-148-177:https ESTABLISHED
+tcp        0      0 gianmadd.lan:38480      162.159.136.234:https   ESTABLISHED
+tcp        0      0 gianmadd.lan:36882      162.159.128.235:https   ESTABLISHED
+tcp        0      0 localhost:11926         localhost:37872         ESTABLISHED
+tcp        0      0 localhost:37872         localhost:11926         ESTABLISHED
+tcp        0      0 gianmadd.lan:54412      13.89.179.8:https       ESTABLISHED
+
+******************************************
+
+Active Internet connections (w/o servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+udp        0      0 gianmadd.lan:bootpc     myfastgate.lan:bootps   ESTABLISHED
+
+******************************************
+
+uid=1000(gianmadd) gid=1000(gianmadd) groups=1000(gianmadd),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),114(lpadmin),134(sambashare),137(libvirt)
+
+******************************************
+

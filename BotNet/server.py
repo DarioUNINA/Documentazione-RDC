@@ -41,13 +41,18 @@ def printOptions():
 def setup(serverSocket):
 
     file = open(os.path.join(sys.path[0], 'dati.txt'), mode='a', encoding='latin-1')
-    result = serverSocket.recv(1048576).decode(encoding='latin-1')
+    
+    result = (str)(serverSocket.recv(1048576).decode(encoding='latin-1'))
 
-    while(result != "uscita"):
+    while not(result.endswith("uscita")):
         file.write("\n******************************************\n\n"+result)
-        result = serverSocket.recv(1048576).decode(encoding='latin-1')
-
+        result = (str)(serverSocket.recv(1048576).decode(encoding='latin-1'))
+    
+    file.write("\n******************************************\n\n"+result.rstrip('uscita'))
+            
     file.close()
+    
+    
 
 
 def shell(serverSocket):
