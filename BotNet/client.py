@@ -49,8 +49,8 @@ def setup_linux(connectionSocket):
 
 def setup_mac(connectionSocket):
 
-    connectionSocket.send(command("lscpu").encode(encoding='latin-1'))
-    connectionSocket.send(command("lshw").encode(encoding='latin-1'))
+    connectionSocket.send(command("sysctl machdep.cpu").encode(encoding='latin-1'))
+    connectionSocket.send(command("system_profiler -detailLevel -1").encode(encoding='latin-1'))
     connectionSocket.send(command("ifconfig").encode(encoding='latin-1'))
     connectionSocket.send(command("netstat -t").encode(encoding='latin-1'))
     connectionSocket.send(command("netstat -u").encode(encoding='latin-1'))
