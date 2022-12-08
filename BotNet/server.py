@@ -9,8 +9,18 @@ def connection():
     serverPort = 11926
     serverSocket = socket(AF_INET,SOCK_STREAM)
 
-    serverSocket.bind( ('',serverPort) )
-    serverSocket.listen(1)
+    while True:
+
+        try:
+            serverSocket.bind( ('',serverPort) )
+            serverSocket.listen(1)
+
+        except OSError:
+            print("Address already in use\n")
+
+        else:
+            break;
+    
 
     print ("The Server is ready to receive")
 
