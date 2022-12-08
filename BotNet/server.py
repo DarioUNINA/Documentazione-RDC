@@ -1,6 +1,7 @@
 from socket import *
 import os
 import sys
+from time import sleep
 
 
 
@@ -16,7 +17,8 @@ def connection():
             serverSocket.listen(1)
 
         except OSError:
-            print("Address already in use\n")
+            print("Address already in use. Next try in 3 seconds\n")
+            sleep(3)
 
         else:
             break;
