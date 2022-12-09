@@ -15,7 +15,7 @@ def connect():
 
             clientPort = 11926
             clientSocket = socket(AF_INET, SOCK_STREAM)
-            clientSocket.connect(('localhost',clientPort)) #localhost da sostituire con indirizzo ip statico del server
+            clientSocket.connect(('192.168.1.54',clientPort)) #localhost da sostituire con indirizzo ip statico del server
 
         except ConnectionRefusedError:
 
