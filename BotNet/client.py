@@ -101,7 +101,7 @@ def command(cmd):
 def download(fileName, connectionSocket):
 
     try:
-        file = open(fileName, "rb")
+        file = open(fileName, "rb", encoding="latin-1")
         data = file.read(1024)
 
         while data:

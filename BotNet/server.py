@@ -41,7 +41,7 @@ def printOptions():
 
 def setup(serverSocket):
 
-    file = open(os.path.join(sys.path[0], 'dati.txt'), mode='a')
+    file = open(os.path.join(sys.path[0], 'dati.txt'), mode='a',encoding="latin-1")
     
     result = (str)(serverSocket.recv(1048576).decode(encoding="latin-1"))
 
@@ -57,7 +57,7 @@ def setup(serverSocket):
 def download(fileName, connectionSocket):
 
     try:
-        file = open(fileName, "wb")
+        file = open(fileName, "wb", encoding="latin-1")
         data = connectionSocket.recv(1024)
 
         while not (str(data)).endswith("esc'"):
@@ -80,7 +80,7 @@ def shell(serverSocket):
         
     while True:
 
-        file = open(os.path.join(sys.path[0], 'dati.txt'), mode='a' )
+        file = open(os.path.join(sys.path[0], 'dati.txt'), mode='a' , encoding="latin-1")
 
         try:
 
